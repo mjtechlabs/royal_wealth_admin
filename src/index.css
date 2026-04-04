@@ -1,38 +1,38 @@
 @import 'tailwindcss';
 
 :root {
-  --primary-blue: #1877f2;
-  --primary-blue2: #d7edfe;
-  --primary-yellow: #ffab00;
-  --primary-black: #252525;
-  --secondary-black: #343434;
-  --primary-red: #ff5630;
+  --primary-blue: #cca032;
+  --primary-blue2: #fffbf0;
+  --primary-yellow: #b8860b;
+  --primary-black: #111111;
+  --secondary-black: #1f1f1f;
+  --primary-red: #d93838;
   --dark-red: #7a0916;
   --dark-yellow: #7a4100;
   --primary-red2: #ffe9db;
-  --primary-green: #86f552;
+  --primary-green: #4caf50;
   --primary-orange: #f58869;
-  --primary-cyan: #6899c9;
+  --primary-cyan: #a68d40;
   --primary-white: #ffffff;
   --primary-gray: #667085;
-  --secondary-gray: #f9fafb;
+  --secondary-gray: #fafafa;
   --tertiary-gray: #344054;
   --quadratic-gray: #a098ae;
-  --primary-dark-bg: #042174;
-  --dark-color1: #1d2939;
-  --dark-color2: #1e192a;
-  --primary-golden: #fad75e;
+  --primary-dark-bg: #111111;
+  --dark-color1: #1a1a1a;
+  --dark-color2: #222222;
+  --primary-golden: #dfb455;
   --primary-golden2: #fff5d5;
   --primary-purple: #27097a;
   --primary-purple2: #f0ddff;
-  --sidebar-bg: #3a304e;
-  --primary-bg: #064e3b;
+  --sidebar-bg: #111111;
+  --primary-bg: #111111;
   --green-color6: #059669;
   --green-color4: #34d399;
   --green-color3: #6ee7b7;
   --palette-text-secondary: #637381;
   --palette-background-neutral: rgb(202, 202, 202);
-  --palette-background-default: #f9fafb;
+  --palette-background-default: #fafafa;
   --font-outfit: 'Outfit', sans-serif;
 }
 
@@ -97,13 +97,13 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--primary-cyan);
+    background: var(--primary-golden);
     border-radius: 10px;
   }
 
   .rdt_TableHeadRow {
     background: var(--secondary-black) !important;
-    color: var(--primary-white);
+    color: var(--primary-golden);
   }
 
   .rdt_TableRow:nth-child(2n) {
@@ -135,6 +135,7 @@
     color: var(--primary-white);
     background: var(--primary-blue);
   }
+
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
@@ -142,6 +143,7 @@
     -webkit-transition: 'color 9999s ease-out, background-color 9999s ease-out';
     -webkit-transition-delay: 9999s;
   }
+
   ::selection {
     color: var(--primary-white);
     background: var(--primary-blue);
@@ -155,7 +157,7 @@
     height: 100%;
   }
 
-  textarea:not(:placeholder-shown):not(:focus) + label {
+  textarea:not(:placeholder-shown):not(:focus)+label {
     margin-top: -20.5px;
   }
 
@@ -190,6 +192,7 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
   }
+
   ul,
   li {
     cursor: pointer !important;
@@ -197,22 +200,19 @@
 }
 
 @utility gray__filter {
-  filter: brightness(0) saturate(100%) invert(46%) sepia(3%) saturate(2712%) hue-rotate(183deg)
-    brightness(93%) contrast(86%);
+  filter: brightness(0) saturate(100%) invert(46%) sepia(3%) saturate(2712%) hue-rotate(183deg) brightness(93%) contrast(86%);
 }
 
 @utility white__filter {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(144deg)
-    brightness(103%) contrast(102%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(144deg) brightness(103%) contrast(102%);
 }
 
 @utility blue__filter {
-  filter: brightness(0) saturate(100%) invert(59%) sepia(40%) saturate(457%) hue-rotate(168deg)
-    brightness(91%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(60%) sepia(30%) saturate(300%) hue-rotate(5deg) brightness(85%) contrast(85%);
 }
+
 @utility blue__filter2 {
-  filter: brightness(0) saturate(100%) invert(34%) sepia(95%) saturate(2563%) hue-rotate(202deg)
-    brightness(98%) contrast(93%);
+  filter: brightness(0) saturate(100%) invert(75%) sepia(50%) saturate(700%) hue-rotate(5deg) brightness(95%) contrast(90%);
 }
 
 @utility h1__utility {
@@ -312,45 +312,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.dashboard_card:nth-child(1n) {
-  background: var(--primary-blue2);
-  color: var(--primary-dark-bg) !important;
+/* dashboard card bg is handled by Tailwind gradient in component */
+
+.dashboard_card img {
+  /* Warm gold filter for SVG icons */
+  filter: brightness(0) saturate(100%) invert(78%) sepia(46%) saturate(500%) hue-rotate(10deg) brightness(100%) contrast(95%) !important;
 }
 
-.dashboard_card:nth-child(1n) div > img {
-  filter: brightness(0) saturate(100%) invert(11%) sepia(95%) saturate(2505%) hue-rotate(221deg)
-    brightness(90%) contrast(109%) !important;
-}
-
-.dashboard_card:nth-child(2n) {
-  background: var(--primary-golden2);
-  color: var(--dark-yellow) !important;
-}
-
-.dashboard_card:nth-child(2n) div > img {
-  filter: brightness(0) saturate(100%) invert(21%) sepia(95%) saturate(1134%) hue-rotate(15deg)
-    brightness(99%) contrast(101%) !important;
-}
-
-.dashboard_card:nth-child(3n) {
-  background: var(--primary-red2);
-  color: var(--dark-red) !important;
-}
-
-.dashboard_card:nth-child(3n) div > img {
-  filter: brightness(0) saturate(100%) invert(14%) sepia(32%) saturate(6798%) hue-rotate(339deg)
-    brightness(82%) contrast(107%) !important;
-}
-
-.dashboard_card:nth-child(4n) {
-  background: var(--primary-purple2);
-  color: var(--primary-purple) !important;
-}
-
-.dashboard_card:nth-child(4n) div > img {
-  filter: brightness(0) saturate(100%) invert(12%) sepia(25%) saturate(7404%) hue-rotate(248deg)
-    brightness(100%) contrast(123%) !important;
-}
 .react-datepicker-popper {
   z-index: 30;
 }

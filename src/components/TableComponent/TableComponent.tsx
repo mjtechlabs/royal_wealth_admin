@@ -1,15 +1,15 @@
-import {useCallback, useMemo, useState} from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import DataTable from 'react-data-table-component'
-import {utils, writeFileXLSX} from 'xlsx'
+import { utils, writeFileXLSX } from 'xlsx'
 
-import {English} from '@/services'
-import {TableComponentProps} from '@/types/ComponentTypes'
+import { English } from '@/services'
+import { TableComponentProps } from '@/types/ComponentTypes'
 
 import CommonButton from '../CommonButton/CommonButton'
 import InputComponent from '../InputComponent/InputComponent'
 
 const TableComponent = (props: TableComponentProps) => {
-  const {columns, data, setRowClickValue} = props
+  const { columns, data, setRowClickValue } = props
   const [filterText, setFilterText] = useState('')
 
   const filteredItems = useMemo(() => {
@@ -73,7 +73,7 @@ const TableComponent = (props: TableComponentProps) => {
   const handleDownloadExcel = useCallback((dataExcel: unknown[]) => {
     const ws = utils.json_to_sheet(dataExcel)
     const wb = utils.book_new()
-    utils.book_append_sheet(wb, ws, 'Capital Hub')
+    utils.book_append_sheet(wb, ws, 'Royal Wealth')
     writeFileXLSX(wb, `Data.xlsx`)
   }, [])
 

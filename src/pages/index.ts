@@ -1,9 +1,7 @@
-import {lazy} from 'react'
+import { lazy } from 'react'
 
 const Dashboard = lazy(async () => import('./Dashboard/Dashboard'))
-const DirectSponsor = lazy(async () => import('./Earning/RankBonus'))
 const SalaryBonus = lazy(async () => import('./Earning/LevelBonus'))
-const TradingProfit = lazy(async () => import('./Earning/DailyTrading'))
 const TreeView = lazy(async () => import('./Geneology/TreeView'))
 const Login = lazy(async () => import('./Login/Login'))
 const Users = lazy(async () => import('./Users/Users'))
@@ -21,13 +19,11 @@ const DepositUserWalletDetails = lazy(async () => import('./WalletReport/UserWal
 export {
   Dashboard,
   DepositUserWalletDetails,
-  DirectSponsor,
   GeneologyTable,
   LevelBonus,
   Login,
   SalaryBonus,
   TopUp,
-  TradingProfit,
   TreeView,
   UpdateUser,
   Users,

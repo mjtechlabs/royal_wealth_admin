@@ -1,6 +1,6 @@
 const English = {
   E1: 'Copyright © 2026. All right reserved by ',
-  E2: 'Capital Hub ',
+  E2: 'Royal Wealth ',
   E3: 'Total Teams',
   E4: 'Total Active Team',
   E5: "Today's Joining",

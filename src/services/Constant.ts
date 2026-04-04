@@ -35,17 +35,17 @@ const Constant = {
     }
   ],
   AmountSelect: [
-    {title: 'Select Package', content: ''},
-    {title: '$ 100', content: '1'},
-    {title: '$ 200', content: '2'},
-    {title: '$ 300', content: '3'},
-    {title: '$ 400', content: '4'},
-    {title: '$ 500', content: '5'},
-    {title: '$ 1000', content: '6'},
-    {title: '$ 1500', content: '7'},
-    {title: '$ 2000', content: '8'},
-    {title: '$ 2500', content: '9'},
-    {title: '$ 3000', content: '10'}
+    { title: 'Select Package', content: '' },
+    { title: '$ 100', content: '1' },
+    { title: '$ 200', content: '2' },
+    { title: '$ 300', content: '3' },
+    { title: '$ 400', content: '4' },
+    { title: '$ 500', content: '5' },
+    { title: '$ 1000', content: '6' },
+    { title: '$ 1500', content: '7' },
+    { title: '$ 2000', content: '8' },
+    { title: '$ 2500', content: '9' },
+    { title: '$ 3000', content: '10' }
   ],
   Forgot: [
     {
@@ -98,21 +98,21 @@ const Constant = {
       content: English.E16,
       subMenu: []
     },
-    {
-      icon: Images.network,
-      link: '#',
-      content: English.E21,
-      subMenu: [
-        {
-          subContent: English.E22,
-          subLink: '/tree-view'
-        },
-        {
-          subContent: English.E125,
-          subLink: '/geneology-table'
-        }
-      ]
-    },
+    // {
+    //   icon: Images.network,
+    //   link: '#',
+    //   content: English.E21,
+    //   subMenu: [
+    //     {
+    //       subContent: English.E22,
+    //       subLink: '/tree-view'
+    //     },
+    //     {
+    //       subContent: English.E125,
+    //       subLink: '/geneology-table'
+    //     }
+    //   ]
+    // },
 
     {
       icon: Images.money,
@@ -120,24 +120,8 @@ const Constant = {
       content: English.E29,
       subMenu: [
         {
-          subContent: English.E30,
-          subLink: '/daily-trading'
-        },
-        {
-          subContent: English.E166,
-          subLink: '/direct-referral'
-        },
-        {
-          subContent: English.E32,
-          subLink: '/royalty-bonus'
-        },
-        {
           subContent: English.E33,
           subLink: '/level-bonus'
-        },
-        {
-          subContent: English.E34,
-          subLink: '/rank-bonus'
         }
       ]
     },
@@ -216,11 +200,11 @@ const Constant = {
     }
   ],
   UserStatus: [
-    {title: 'All Users', content: '0'},
-    {title: 'Active Users', content: '1'},
-    {title: 'Block Users', content: '2'}
+    { title: 'All Users', content: '0' },
+    { title: 'Active Users', content: '1' },
+    { title: 'Block Users', content: '2' }
   ],
-  UserTopupInputs: [{label: English.E45, inputName: 'usercode', type: 'text'}],
+  UserTopupInputs: [{ label: English.E45, inputName: 'usercode', type: 'text' }],
   buySellDropdown: ['On Going', 'History'],
 
   dashboardCardConstant: [
@@ -259,31 +243,31 @@ const Constant = {
   ],
 
   tableDemoHeading: [
-    {content: 'INCOME', showArrow: false},
-    {content: 'USDT ($)', showArrow: false}
+    { content: 'INCOME', showArrow: false },
+    { content: 'USDT ($)', showArrow: false }
   ],
   tableBody: [
-    {content1: 'Trading Profit Bonus', content2: '$0'},
-    {content1: 'Booster Bonus', content2: '$0'},
-    {content1: 'Direct Sponsor Bonus', content2: '$0'}
+    { content1: 'Trading Profit Bonus', content2: '$0' },
+    { content1: 'Booster Bonus', content2: '$0' },
+    { content1: 'Direct Sponsor Bonus', content2: '$0' }
   ],
   datatableHeading: [
-    {content: 'Sr.No.', showArrow: false},
-    {content: 'Date', showArrow: false},
-    {content: 'Topup Amount', showArrow: false},
-    {content: 'ROI Per', showArrow: false},
-    {content: 'Total ROI', showArrow: false},
-    {content: 'Booster', showArrow: false}
+    { content: 'Sr.No.', showArrow: false },
+    { content: 'Date', showArrow: false },
+    { content: 'Topup Amount', showArrow: false },
+    { content: 'ROI Per', showArrow: false },
+    { content: 'Total ROI', showArrow: false },
+    { content: 'Booster', showArrow: false }
   ],
   datatableBody: [
-    {srno: '1', date: '10-10-2026', amount: '$200', per: '5%', total: '$500', booster: '$100'}
+    { srno: '1', date: '10-10-2026', amount: '$200', per: '5%', total: '$500', booster: '$100' }
   ],
   beptableHeading: [
-    {content: 'Sr.No.', showArrow: false},
-    {content: 'Transaction Details', showArrow: false},
-    {content: 'Date', showArrow: false},
-    {content: 'Amount', showArrow: false},
-    {content: 'Status', showArrow: false}
+    { content: 'Sr.No.', showArrow: false },
+    { content: 'Transaction Details', showArrow: false },
+    { content: 'Date', showArrow: false },
+    { content: 'Amount', showArrow: false },
+    { content: 'Status', showArrow: false }
   ],
   beptableBody: [
     {
@@ -294,27 +278,27 @@ const Constant = {
       status: 'Active'
     }
   ],
-  dropDownData: [{title: 'Select Status'}, {title: 'Active'}, {title: 'Free'}, {title: 'Block'}],
+  dropDownData: [{ title: 'Select Status' }, { title: 'Active' }, { title: 'Free' }, { title: 'Block' }],
   withdraData: [
-    {title: 'Select Status'},
-    {title: 'Pending'},
-    {title: 'Accepted'},
-    {title: 'Rejected'}
+    { title: 'Select Status' },
+    { title: 'Pending' },
+    { title: 'Accepted' },
+    { title: 'Rejected' }
   ],
-  countryData: [{title: 'Select Country'}, {title: 'India'}, {title: 'USA'}, {title: 'England'}],
+  countryData: [{ title: 'Select Country' }, { title: 'India' }, { title: 'USA' }, { title: 'England' }],
 
   UserType: [
-    {title: English.E107},
-    {title: English.E64},
-    {title: English.E70},
-    {title: English.E76}
+    { title: English.E107 },
+    { title: English.E64 },
+    { title: English.E70 },
+    { title: English.E76 }
   ],
   UserUpdate: [
-    {name: 'usercode', placeHolder: English.E83, label: English.E83},
-    {name: 'name', placeHolder: English.E80, label: English.E80},
-    {name: 'email', placeHolder: English.E82, label: English.E82},
-    {name: 'mobile', placeHolder: English.E79, label: English.E79},
-    {name: 'country', placeHolder: English.E94, label: English.E94}
+    { name: 'usercode', placeHolder: English.E83, label: English.E83 },
+    { name: 'name', placeHolder: English.E80, label: English.E80 },
+    { name: 'email', placeHolder: English.E82, label: English.E82 },
+    { name: 'mobile', placeHolder: English.E79, label: English.E79 },
+    { name: 'country', placeHolder: English.E94, label: English.E94 }
   ],
   giftTopUpList: [
     {
@@ -375,21 +359,21 @@ const Constant = {
     }
   ],
   transDropdownData: [
-    {title: 'Credit', content: '1'},
-    {title: 'Debit', content: '2'}
+    { title: 'Credit', content: '1' },
+    { title: 'Debit', content: '2' }
   ],
 
   FieldBonusData: [
-    {title: 'Sales 3 Plot Get INR 10,000 / 24 Month', content: '10000'},
-    {title: 'Sales 7 Plot Get INR 25,000 / 24 Month', content: '25000'},
-    {title: 'Sales 12 Plot Get INR 50,000 / 24 Month', content: '50000'},
-    {title: 'Sales 21 Plot Get INR 80,000 / 24 Month', content: '80000'},
-    {title: 'Sales 51 Plot Get INR 2,00,000 / 24 Month', content: '200000'}
+    { title: 'Sales 3 Plot Get INR 10,000 / 24 Month', content: '10000' },
+    { title: 'Sales 7 Plot Get INR 25,000 / 24 Month', content: '25000' },
+    { title: 'Sales 12 Plot Get INR 50,000 / 24 Month', content: '50000' },
+    { title: 'Sales 21 Plot Get INR 80,000 / 24 Month', content: '80000' },
+    { title: 'Sales 51 Plot Get INR 2,00,000 / 24 Month', content: '200000' }
   ],
 
   WalletTypeDropdownData: [
-    {title: 'Income Wallet', content: 'income_wallet'},
-    {title: 'Deposit Wallet', content: 'wallet_trans'}
+    { title: 'Income Wallet', content: 'income_wallet' },
+    { title: 'Deposit Wallet', content: 'wallet_trans' }
   ],
   SendBalanceArray: [
     {

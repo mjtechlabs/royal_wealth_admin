@@ -86,9 +86,9 @@ const Layout = () => {
         <div className="flex-1 relative overflow-x-scroll p-0 no-scrollbar">
           <Outlet />
           <div className=" ">
-            <p className="bg-primary-black bottom-0  p-3 text-center text-primary-white">
+            <p className="bg-primary-black bottom-0 p-3 text-center text-primary-white">
               {English.E1}
-              <b> {English.E2}</b>
+              <b className="text-primary-golden"> {English.E2}</b>
             </p>
           </div>
         </div>

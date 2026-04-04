@@ -1,6 +1,6 @@
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import {Layout} from '@/layout'
+import { Layout } from '@/layout'
 import LazyLoader from '@/LazyLoader'
 import {
   Dashboard,
@@ -13,10 +13,6 @@ import {
   Withdrawal
 } from '@/pages'
 import PopupImage from '@/pages/DashboardPopup/PopupImage'
-import DailyTrading from '@/pages/Earning/DailyTrading'
-import DirectReferral from '@/pages/Earning/DirectReferral'
-import RankBonus from '@/pages/Earning/RankBonus'
-import RoyaltyBonus from '@/pages/Earning/RoyaltyBonus'
 import GeneologyTableView from '@/pages/Geneology/GenelogyTableView'
 import CloseTicketPage from '@/pages/SupportTicket/CloseTicket'
 import DetailsSupportTicket from '@/pages/SupportTicket/DetailsSupportTicket'
@@ -30,7 +26,7 @@ import InrWithdrawal from '@/pages/Withdrawal/InrWithdrawal'
 import UsdtWithdrawal from '@/pages/Withdrawal/UsdtWithdrawal'
 import UsdtWithdrawalReport from '@/pages/Withdrawal/UsdtWithdrawalReport'
 import WithoutGateway from '@/pages/WithoutGateWayWithdraw/WithoutGateway'
-import {UserWrapper} from '@/Wrapper'
+import { UserWrapper } from '@/Wrapper'
 
 const DashboardRoutes = [
   <Route
@@ -105,40 +101,6 @@ const DashboardRoutes = [
         </UserWrapper>
       }
     />
-
-    <Route
-      key="daily-trading"
-      path="/daily-trading"
-      element={
-        <UserWrapper>
-          <LazyLoader>
-            <DailyTrading />
-          </LazyLoader>
-        </UserWrapper>
-      }
-    />
-    <Route
-      key="direct-referral"
-      path="/direct-referral"
-      element={
-        <UserWrapper>
-          <LazyLoader>
-            <DirectReferral />
-          </LazyLoader>
-        </UserWrapper>
-      }
-    />
-    <Route
-      key="royalty-bonus"
-      path="/royalty-bonus"
-      element={
-        <UserWrapper>
-          <LazyLoader>
-            <RoyaltyBonus />
-          </LazyLoader>
-        </UserWrapper>
-      }
-    />
     <Route
       key="level-bonus"
       path="/level-bonus"
@@ -150,18 +112,6 @@ const DashboardRoutes = [
         </UserWrapper>
       }
     />
-    <Route
-      key="rank-bonus"
-      path="/rank-bonus"
-      element={
-        <UserWrapper>
-          <LazyLoader>
-            <RankBonus />
-          </LazyLoader>
-        </UserWrapper>
-      }
-    />
-
     <Route
       key="popup-image"
       path="/popup/image"
