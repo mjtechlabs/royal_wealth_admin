@@ -26,7 +26,6 @@ const UsdtWithdrawalReport = () => {
 
     WithdrawalReqApi.UsdtWithdrawReqData()
       .then((res) => {
-        // console.log('res', res)
         if (res?.data) {
           setWithdrawData(res?.data)
         }
@@ -76,6 +75,11 @@ const UsdtWithdrawalReport = () => {
     {
       name: English.E116,
       selector: (row: WithDrawApiData) => <span>${row.remain}</span>,
+      sortable: true
+    },
+    {
+      name: English.E107,
+      selector: (row: WithDrawApiData) => <span>{row.status}</span>,
       sortable: true
     }
   ]

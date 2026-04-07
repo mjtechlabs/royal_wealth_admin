@@ -71,7 +71,6 @@ const DepositHistory = () => {
 
     AdminTransHistoryApi.AdminTransHistory()
       .then((res) => {
-        // console.log('res', res)
         if (res?.data) {
           setAdminTransData(res?.data)
         }

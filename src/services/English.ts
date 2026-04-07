@@ -31,7 +31,7 @@ const English = {
   E30: 'Daily Trading Profit Bonus',
   E31: 'Direct Referral Bonus',
   E32: 'Royalty Bonus',
-  E33: 'Level Bonus',
+  E33: 'Pool Bonus',
   E34: 'Rank Bonus',
   E35: 'Income Report',
   E36: 'Income Wallet Report',
@@ -230,7 +230,9 @@ const English = {
   E233: 'INR Withdraw Report',
   E234: 'Without GateWay Withdraw',
   E235: 'Remain',
-  E236: 'Transaction Password'
+  E236: 'Transaction Password',
+  E237: 'Autopool 1',
+  E238: 'Autopool 2'
 }
 
 export default English

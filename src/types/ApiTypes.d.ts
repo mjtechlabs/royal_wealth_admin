@@ -16,6 +16,8 @@ export interface UserInfoDashboard {
   direct_referral_income: string
   level_income: string
   rank_bonus: string
+  autopool1: string
+  autopool2: string
 }
 export interface UserIncomeWalletReportDetails {
   date: string
@@ -112,6 +114,7 @@ export interface WithDrawApiData {
   totalamount: string
   admin_charge: string
   remain: string
+  status: string
 }
 export interface InrWithdRawReport {
   sr_no: number
@@ -182,7 +185,7 @@ export interface GetUserListApiProp {
   regedate: string
   activesdate: string
   actineedate: string
-  usercode: string
+  usercode?: string
   email: string
   userstatus: int
 }

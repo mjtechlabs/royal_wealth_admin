@@ -34,7 +34,7 @@ const LevelBonus = () => {
       sortable: true
     },
     {
-      name: English.E109,
+      name: English.E220,
       selector: (row: any) => row.details,
       sortable: true
     },

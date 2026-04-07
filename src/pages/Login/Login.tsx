@@ -22,7 +22,6 @@ const Login = () => {
 
     AuthApi.LoginAdminApi(payload).then((res) => {
       if (res) {
-        // console.log('res', res)
         CommonFunction.addSliceData('addUserDetails', {token: res?.token})
         navigate('/')
       }

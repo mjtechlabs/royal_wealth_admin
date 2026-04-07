@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import GoBackComponent from './components/BreakLine/GoBackComponent/GoBackComponent'
 import ModalProvider from './components/ModalComponent/context/ModalProvider'
-import { AuthRoute, DashboardRoutes } from './routes'
+import {AuthRoute, DashboardRoutes} from './routes'
 
 const App = () => (
   <BrowserRouter>

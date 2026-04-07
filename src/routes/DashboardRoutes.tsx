@@ -1,6 +1,6 @@
-import { Route } from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
-import { Layout } from '@/layout'
+import {Layout} from '@/layout'
 import LazyLoader from '@/LazyLoader'
 import {
   Dashboard,
@@ -12,6 +12,7 @@ import {
   UserWalletDetails,
   Withdrawal
 } from '@/pages'
+import AutopoolDetails from '@/pages/AutopoolDetails/AutopoolDetails'
 import PopupImage from '@/pages/DashboardPopup/PopupImage'
 import GeneologyTableView from '@/pages/Geneology/GenelogyTableView'
 import CloseTicketPage from '@/pages/SupportTicket/CloseTicket'
@@ -22,11 +23,11 @@ import DepositHistory from '@/pages/WalletManage/DepositHistory'
 import IncomeHistory from '@/pages/WalletManage/IncomeHistory'
 import SendBalance from '@/pages/WalletManage/SendBalance'
 import UserWalletReport from '@/pages/WalletReport/UserWalletReport'
-import InrWithdrawal from '@/pages/Withdrawal/InrWithdrawal'
+// import InrWithdrawal from '@/pages/Withdrawal/InrWithdrawal'
 import UsdtWithdrawal from '@/pages/Withdrawal/UsdtWithdrawal'
 import UsdtWithdrawalReport from '@/pages/Withdrawal/UsdtWithdrawalReport'
 import WithoutGateway from '@/pages/WithoutGateWayWithdraw/WithoutGateway'
-import { UserWrapper } from '@/Wrapper'
+import {UserWrapper} from '@/Wrapper'
 
 const DashboardRoutes = [
   <Route
@@ -136,6 +137,17 @@ const DashboardRoutes = [
       }
     />
     <Route
+      key="autopool-details"
+      path="/autopool-details"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <AutopoolDetails />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+    <Route
       key="admin-trans-his"
       path="/admin-trans-his"
       element={
@@ -219,7 +231,7 @@ const DashboardRoutes = [
         </UserWrapper>
       }
     />
-    <Route
+    {/* <Route
       key="inr-report"
       path="/inr-report"
       element={
@@ -229,7 +241,7 @@ const DashboardRoutes = [
           </LazyLoader>
         </UserWrapper>
       }
-    />
+    /> */}
     {/* <Route
       key="wallet-report"
       path="/wallet-report"

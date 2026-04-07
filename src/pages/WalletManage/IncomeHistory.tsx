@@ -63,7 +63,6 @@ const IncomeHistory = () => {
 
     UserBalanceReportApi.UserBalanceReport()
       .then((res) => {
-        // console.log('res', res)
         if (res?.data) {
           setUserBalanceData(res?.data)
         }

@@ -30,7 +30,6 @@ const Topup = () => {
       TopupApi.TopupHistory(payload)
         .then((res) => {
           if (res?.data) {
-            // console.log('res', res)
             setTopupData(res?.data)
           }
         })
@@ -62,27 +61,8 @@ const Topup = () => {
       sortable: true
     },
     {
-      name: English.E98,
-      cell: (value: TopUpApiData) => <span>${value?.roi_amount_daily}</span>
-    },
-    {
-      name: English.E222,
-      selector: (row: TopUpApiData) => <span>{row?.roi_per}</span>,
-      sortable: true
-    },
-    {
-      name: English.E221,
-      selector: (row: TopUpApiData) => <span>${row?.roi_given}</span>,
-      sortable: true
-    },
-    {
       name: English.E223,
       selector: (row: TopUpApiData) => <span>{row?.totalamount}</span>,
-      sortable: true
-    },
-    {
-      name: English.E224,
-      selector: (row: TopUpApiData) => <span>{row?.ordewrby}</span>,
       sortable: true
     }
   ]

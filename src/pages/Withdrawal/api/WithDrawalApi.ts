@@ -9,7 +9,6 @@ const WithDrawData = async () =>
     ApiCall('post', EndPoints.withdraw)
       .then((res: any) => {
         if (res?.status === 200) {
-          // console.log('res-with', res)
           resolve({
             data: res?.data?.withdrawal_request
           })

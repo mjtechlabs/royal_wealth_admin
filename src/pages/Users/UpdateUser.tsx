@@ -27,18 +27,18 @@ const UpdateUser = () => {
     password: '',
     confirmpassword: ''
   })
-  const [transValues, setTransValues] = useState({
-    password: '',
-    confirmpassword: ''
-  })
+  // const [transValues, setTransValues] = useState({
+  //   password: '',
+  //   confirmpassword: ''
+  // })
   const [error, setError] = useState({
     password: '',
     confirmpassword: ''
   })
-  const [errorTrans, setErrorTrans] = useState({
-    password: '',
-    confirmpassword: ''
-  })
+  // const [errorTrans, setErrorTrans] = useState({
+  //   password: '',
+  //   confirmpassword: ''
+  // })
   const navigate = useNavigate()
 
   const [selectCountry, setSelectCountry] = useState<DropDownObjectType>({
@@ -67,27 +67,26 @@ const UpdateUser = () => {
 
           return newValues
         })
-        return
       }
-      if (type === 'trans') {
-        setTransValues((prev) => {
-          const newValues = {...prev, [name]: value}
+      // if (type === 'trans') {
+      //   setTransValues((prev) => {
+      //     const newValues = { ...prev, [name]: value }
 
-          if (newValues.password !== newValues.confirmpassword) {
-            setErrorTrans({
-              password: '',
-              confirmpassword: 'Not Match Password'
-            })
-          } else {
-            setErrorTrans({
-              confirmpassword: '',
-              password: ''
-            })
-          }
+      //     if (newValues.password !== newValues.confirmpassword) {
+      //       setErrorTrans({
+      //         password: '',
+      //         confirmpassword: 'Not Match Password'
+      //       })
+      //     } else {
+      //       setErrorTrans({
+      //         confirmpassword: '',
+      //         password: ''
+      //       })
+      //     }
 
-          return newValues
-        })
-      }
+      //     return newValues
+      //   })
+      // }
     },
     []
   )
@@ -144,27 +143,27 @@ const UpdateUser = () => {
       })
   }, [inputValues?.userid, passwordValues?.password])
 
-  const handleUpdatTransPassword = useCallback(() => {
-    loaderRef.current?.showLoader(true)
+  // const handleUpdatTransPassword = useCallback(() => {
+  //   loaderRef.current?.showLoader(true)
 
-    const payload = {
-      password: transValues?.password,
-      usercode: inputValues?.userid ?? ''
-    }
+  //   const payload = {
+  //     password: transValues?.password,
+  //     usercode: inputValues?.userid ?? ''
+  //   }
 
-    UserList.updateTransPassword(payload)
-      .then((res) => {
-        if (res) {
-          setTransValues({
-            confirmpassword: '',
-            password: ''
-          })
-        }
-      })
-      .finally(() => {
-        loaderRef.current?.showLoader(false)
-      })
-  }, [inputValues?.userid, transValues?.password])
+  //   UserList.updateTransPassword(payload)
+  //     .then((res) => {
+  //       if (res) {
+  //         setTransValues({
+  //           confirmpassword: '',
+  //           password: ''
+  //         })
+  //       }
+  //     })
+  //     .finally(() => {
+  //       loaderRef.current?.showLoader(false)
+  //     })
+  // }, [inputValues?.userid, transValues?.password])
 
   const handleGetCountry = useCallback(() => {
     UserList.getCountry().then((res) => {
@@ -282,7 +281,7 @@ const UpdateUser = () => {
             </div>
           </Layout3>
         </div>
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <HeadingComponent className="text-left mt-5" singleLineContent="Transaction Password " />
           <Layout3 className="border border-primary-blue/50 rounded-2xl" singleLineContent="">
             <div className="flex flex-col gap-6">
@@ -320,7 +319,7 @@ const UpdateUser = () => {
               />
             </div>
           </Layout3>
-        </div>
+        </div> */}
       </div>
     </Layout2>
   )

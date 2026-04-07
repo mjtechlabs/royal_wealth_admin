@@ -8,7 +8,6 @@ const UserBalanceReport = async () =>
   new Promise<{data: UserBalanceReportApiData[]} | null>((resolve) => {
     ApiCall('post', EndPoints.adminIncomeWalletReport)
       .then((res: any) => {
-        // console.log('res123', res)
         if (res?.status === 200) {
           resolve({
             data: res?.data?.income_walllet

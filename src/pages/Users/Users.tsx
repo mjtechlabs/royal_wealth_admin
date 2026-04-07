@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unstable-nested-components */
 import dayjs from 'dayjs'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
-import { CommonButton, TableComponent } from '@/components'
+import {CommonButton, TableComponent} from '@/components'
 import FilterComponent from '@/components/FilterComponent/FilterComponent'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { English } from '@/services'
-import { UserListApiData } from '@/types/ApiTypes'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {English} from '@/services'
+import {UserListApiData} from '@/types/ApiTypes'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import UserList from './api/UsersApi'
 
@@ -18,7 +18,7 @@ const Users = () => {
 
   const navigate = useNavigate()
   const dataWithIndex = useMemo(
-    () => totalUsers?.map((item, index) => ({ id: index + 1, ...item })),
+    () => totalUsers?.map((item, index) => ({id: index + 1, ...item})),
     [totalUsers]
   )
   const loaderRef = useRef<AppLoaderRef>(null)
@@ -29,7 +29,6 @@ const Users = () => {
       date2: string,
       date3: string,
       date4: string,
-      userCode: string,
       email: string,
       userStatus: string
     ) => {
@@ -39,13 +38,11 @@ const Users = () => {
         actineedate: date4 !== '' ? dayjs(date4).format('YYYY-MM-DD') : '',
         regsdate: date1 !== '' ? dayjs(date1).format('YYYY-MM-DD') : '',
         regedate: date1 !== '' ? dayjs(date2).format('YYYY-MM-DD') : '',
-        usercode: userCode ?? '',
         email: email ?? '',
         userstatus: userStatus ?? ''
       }
       UserList.getUserList(payload)
         .then((res) => {
-          console.log(res)
           setTotalUsers(res)
         })
         .finally(() => {
@@ -64,7 +61,7 @@ const Users = () => {
         .then((res) => {
           if (res) {
             loaderRef.current?.showLoader(true)
-            getUserList('', '', '', '', '', '', '-1')
+            getUserList('', '', '', '', '', '-1')
           }
         })
         .finally(() => {
@@ -172,7 +169,7 @@ const Users = () => {
             </Link> */}
             <CommonButton
               className="text-nowrap!"
-              onClick={async () => navigate('/users/update', { state: value })}
+              onClick={async () => navigate('/users/update', {state: value})}
               singleLineContent={English.E93}
             />
             <CommonButton
@@ -193,7 +190,7 @@ const Users = () => {
 
   useEffect(() => {
     loaderRef.current?.showLoader(true)
-    getUserList('', '', '', '', '', '', '-1')
+    getUserList('', '', '', '', '', '-1')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -204,11 +201,10 @@ const Users = () => {
         isDateFilterType1
         isDateFilterType2
         isStatus1Type
-        isUsercode
         isUserEmailType
         onPressSearch={(data) => {
-          const { date1, date2, date3, date4, email, userCode, userStatus } = data
-          getUserList(date1, date2, date3, date4, userCode, email, userStatus)
+          const {date1, date2, date3, date4, email, userStatus} = data
+          getUserList(date1, date2, date3, date4, email, userStatus)
         }}
       />
 

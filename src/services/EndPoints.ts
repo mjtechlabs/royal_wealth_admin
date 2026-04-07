@@ -13,6 +13,8 @@ const EndPoints = {
   withdrawaction: 'withdrawal/withdraw_status_change.php',
   withdrawactionWithoutGateWay: 'withdrawal/withdraw_status_change_without_gateway.php',
 
+  getAutopoolData: 'dashboard/get_autopool_data.php',
+
   topupList: 'orders/get_orders.php',
 
   incomeReport: 'income/income_list.php',

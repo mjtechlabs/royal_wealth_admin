@@ -12,7 +12,6 @@ const WithdrawReqAction = async (props: WithdrawReqActionProps) => {
     ApiCall('post', EndPoints.withdrawactionWithoutGateWay, payload)
       .then((res: any) => {
         if (res?.status === 200) {
-          // console.log('action', res)
           toast.success(res?.result)
           resolve(true)
         } else {

@@ -26,7 +26,6 @@ const InrWithdrawal = () => {
 
     WithdrawalReqApi.InrWithdrawReqData()
       .then((res) => {
-        // console.log('res', res)
         if (res?.data) {
           setWithdrawData(res?.data)
         }

@@ -6,15 +6,14 @@ import {GetUserListApiProp, UserListApiData, UserUpdateApiProps} from '@/types/A
 import {DropDownObjectType} from '@/types/CommonTypes'
 
 const getUserList = async (props: GetUserListApiProp) => {
-  const {actineedate, activesdate, email, regedate, regsdate, userstatus, usercode} = props
+  const {actineedate, activesdate, email, regedate, regsdate, userstatus} = props
   const initialPayload = {
     actineedate,
     activesdate,
     email,
     regedate,
     regsdate,
-    userstatus: userstatus.toString() === '-1' ? '' : userstatus,
-    usercode
+    userstatus: userstatus.toString() === '-1' ? '' : userstatus
   }
 
   return new Promise<UserListApiData[]>((resolve) => {
@@ -88,7 +87,6 @@ const getUserInfo = async (usercode: string) =>
     ApiCall('post', EndPoints.getUserInfo, {usercode})
       .then((res: any) => {
         if (res?.status === 200) {
-          // console.log(res)
           resolve({
             data: res?.data?.[0]
           })

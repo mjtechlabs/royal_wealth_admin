@@ -12,7 +12,6 @@ const LoginAdminApi = async (props: LoginApiProps) => {
   return new Promise<LoginApiData | null>((resolve) => {
     ApiCall('post', EndPoints.login, payload)
       .then((res: any) => {
-        // console.log('res', res)
         if (res?.status === 200) {
           resolve({
             token: res?.data?.token
