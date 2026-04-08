@@ -47,7 +47,8 @@ const Sidebar = (props: {
                           currentPath.startsWith('/direct-referral') ||
                           currentPath.startsWith('/royalty-bonus') ||
                           currentPath.startsWith('/level-bonus') ||
-                          currentPath.startsWith('/rank-bonus')
+                          currentPath.startsWith('/rank-bonus') ||
+                          currentPath.startsWith('/cashback-bonus')
                         ? 'Earning'
                         : currentPath.startsWith('/usdt-req') ||
                             currentPath.startsWith('/usdt-report') ||

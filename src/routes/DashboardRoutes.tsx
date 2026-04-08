@@ -14,6 +14,7 @@ import {
 } from '@/pages'
 import AutopoolDetails from '@/pages/AutopoolDetails/AutopoolDetails'
 import PopupImage from '@/pages/DashboardPopup/PopupImage'
+import CashbackBonus from '@/pages/Earning/CashbackBonus'
 import GeneologyTableView from '@/pages/Geneology/GenelogyTableView'
 import CloseTicketPage from '@/pages/SupportTicket/CloseTicket'
 import DetailsSupportTicket from '@/pages/SupportTicket/DetailsSupportTicket'
@@ -109,6 +110,17 @@ const DashboardRoutes = [
         <UserWrapper>
           <LazyLoader>
             <LevelBonus />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+    <Route
+      key="cashback-bonus"
+      path="/cashback-bonus"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <CashbackBonus />
           </LazyLoader>
         </UserWrapper>
       }

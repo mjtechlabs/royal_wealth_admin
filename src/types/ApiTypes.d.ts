@@ -18,6 +18,7 @@ export interface UserInfoDashboard {
   rank_bonus: string
   autopool1: string
   autopool2: string
+  cashback: string
 }
 export interface UserIncomeWalletReportDetails {
   date: string

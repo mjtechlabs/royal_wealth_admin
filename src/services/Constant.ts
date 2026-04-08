@@ -128,6 +128,10 @@ const Constant = {
         {
           subContent: English.E33,
           subLink: '/level-bonus'
+        },
+        {
+          subContent: English.E239,
+          subLink: '/cashback-bonus'
         }
       ]
     },

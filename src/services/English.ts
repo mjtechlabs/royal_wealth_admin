@@ -232,7 +232,8 @@ const English = {
   E235: 'Remain',
   E236: 'Transaction Password',
   E237: 'Autopool 1',
-  E238: 'Autopool 2'
+  E238: 'Autopool 2',
+  E239: 'Cashback Bonus'
 }
 
 export default English
