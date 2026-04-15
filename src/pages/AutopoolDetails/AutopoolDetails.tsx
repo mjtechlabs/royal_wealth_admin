@@ -1,15 +1,16 @@
 /* eslint-disable react/no-array-index-key */
-import React, {useCallback, useRef, useState} from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 
 import Loader from '@/components/InputComponent/Loader/Loader'
-import {Layout2} from '@/layout'
-import {AppLoaderRef} from '@/types/ComponentTypes'
+import { Layout2 } from '@/layout'
+import { AppLoaderRef } from '@/types/ComponentTypes'
 
 import AutopoolDetailsApi from './api/AutopoolDetailsApi'
 
 const AutopoolDetails = () => {
   const [userRegCode, setUserRegCode] = useState('')
   const [data, setData] = useState<any>(null)
+
   const loaderRef = useRef<AppLoaderRef>(null)
   const [loading, setLoading] = useState(false)
 
@@ -40,7 +41,7 @@ const AutopoolDetails = () => {
   return (
     <Layout2 singleLineContent="Autopool Details">
       <Loader ref={loaderRef} />
-      <div className="flex h-full w-full flex-col gap-8 p-4 md:p-8 lg:p-10">
+      <div className="flex h-full w-full flex-col gap-8 p-4  md:p-8 lg:p-10">
         <form
           className="relative flex flex-col sm:flex-row gap-4 items-center bg-white dark:bg-[#121212]/90 p-8 rounded-2xl shadow-xl dark:shadow-2xl dark:shadow-yellow-500/10 border border-gray-200 dark:border-yellow-500/30 backdrop-blur-md transition-all"
           onSubmit={handleSubmit}
@@ -92,7 +93,8 @@ const AutopoolDetails = () => {
 
         {data && Object.keys(data).length > 0
           ? Object.entries(data).map(([groupName, poolGroup]) => (
-              <div key={groupName} className="mt-8 mb-12">
+            (
+              <div key={groupName} className=" pb-4">
                 <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-yellow-400 to-yellow-600 mb-6 uppercase tracking-widest pl-2 border-l-4 border-yellow-500">
                   {groupName.replace('autopool', 'Autopool ')}
                 </h3>
@@ -124,16 +126,15 @@ const AutopoolDetails = () => {
                                 />
                               </svg>
                             </span>
-                            <h4 className="text-base lg:text-lg xl:text-xl font-extrabold text-yellow-50 uppercase tracking-wider drop-shadow-sm truncate">
-                              {pool.autopool}
+                            <h4 className="text-base lg:text-lg xl:text-xl font-extrabold text-yellow-50 uppercase tracking-wider drop-shadow-sm  ">
+                              {pool?.autopool?.replace('autopool', 'autopool ')}
                             </h4>
                           </div>
                           <span
-                            className={`shrink-0 text-[10px] lg:text-xs font-bold px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-full shadow-inner ${
-                              pool.status.toLowerCase() === 'completed'
-                                ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                                : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
-                            }`}
+                            className={`shrink-0 text-[10px] lg:text-xs font-bold px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-full shadow-inner ${pool.status.toLowerCase() === 'completed'
+                              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                              : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                              }`}
                           >
                             {pool.status === 'Padding' ? 'Pending' : pool.status}
                           </span>
@@ -154,7 +155,7 @@ const AutopoolDetails = () => {
                                 <div
                                   key={i}
                                   className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-400/80 animate-pulse"
-                                  style={{animationDelay: `${i * 150}ms`}}
+                                  style={{ animationDelay: `${i * 150}ms` }}
                                 />
                               )
                             )}
@@ -164,32 +165,11 @@ const AutopoolDetails = () => {
                     ))}
                 </div>
               </div>
-            ))
+            )
+          ))
           : null}
 
-        {data && Object.keys(data).length === 0 ? (
-          <div className="mt-8 flex flex-col items-center justify-center p-12 text-center bg-[#1a1a1a]/80 rounded-2xl border border-dashed border-yellow-500/30 backdrop-blur-sm">
-            <div className="h-16 w-16 mb-4 text-yellow-600/60">
-              <svg
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1}
-                />
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold text-yellow-100 mb-2">No Autopool Data Found</h3>
-            <p className="text-gray-400 max-w-md">
-              The user code entered does not have any active autopool records or does not exist.
-            </p>
-          </div>
-        ) : null}
+
       </div>
     </Layout2>
   )

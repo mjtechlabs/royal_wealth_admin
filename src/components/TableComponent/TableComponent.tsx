@@ -1,15 +1,15 @@
-import {useCallback, useMemo, useState} from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import DataTable from 'react-data-table-component'
-import {utils, writeFileXLSX} from 'xlsx'
+import { utils, writeFileXLSX } from 'xlsx'
 
-import {English} from '@/services'
-import {TableComponentProps} from '@/types/ComponentTypes'
+import { English } from '@/services'
+import { TableComponentProps } from '@/types/ComponentTypes'
 
 import CommonButton from '../CommonButton/CommonButton'
 import InputComponent from '../InputComponent/InputComponent'
 
 const TableComponent = (props: TableComponentProps) => {
-  const {columns, data, setRowClickValue} = props
+  const { columns, data, setRowClickValue } = props
   const [filterText, setFilterText] = useState('')
 
   const filteredItems = useMemo(() => {
@@ -95,7 +95,7 @@ const TableComponent = (props: TableComponentProps) => {
         <div>
           <InputComponent
             labelText={English.E89}
-            wrapperClassName="flex-row text-nowrap items-center gap-2.5"
+            wrapperClassName="flex-row text-nowrap  items-center gap-2.5"
             onChange={(e) => {
               setFilterText(e.target.value)
             }}

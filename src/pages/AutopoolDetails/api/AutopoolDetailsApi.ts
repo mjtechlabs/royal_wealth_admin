@@ -1,11 +1,11 @@
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 import ApiCall from '@/services/ApiCall'
 import EndPoints from '@/services/EndPoints'
 
 const GetAutopoolData = async (user_reg_code: string) =>
-  new Promise<{data: any} | null>((resolve) => {
-    ApiCall('post', EndPoints.getAutopoolData, {user_reg_code})
+  new Promise<{ data: any } | null>((resolve) => {
+    ApiCall('post', EndPoints.getAutopoolData, { user_reg_code })
       .then((res: any) => {
         if (res?.status === 200) {
           resolve({
@@ -22,5 +22,5 @@ const GetAutopoolData = async (user_reg_code: string) =>
       })
   })
 
-const AutopoolDetailsApi = {GetAutopoolData}
+const AutopoolDetailsApi = { GetAutopoolData }
 export default AutopoolDetailsApi

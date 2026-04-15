@@ -68,6 +68,21 @@ const Dashboard = () => {
         content2: cardsDetails?.autopool2 ?? '0',
         icon: Images.inviteIcon
       },
+      {
+        content1: English.E240,
+        content2: cardsDetails?.autopool3 ?? '0',
+        icon: Images.inviteIcon
+      },
+      {
+        content1: English.E241,
+        content2: cardsDetails?.autopool4 ?? '0',
+        icon: Images.inviteIcon
+      },
+      {
+        content1: English.E242,
+        content2: cardsDetails?.autopool5 ?? '0',
+        icon: Images.inviteIcon
+      },
       // {
       //   content1: English.E165,
       //   content2: cardsDetails?.royalty_bonuss ?? '0',
@@ -101,7 +116,10 @@ const Dashboard = () => {
               content1 !== 'Total Income Wallet Balance' &&
               content1 !== 'Total Topup' &&
               content1 !== 'Autopool 1' &&
-              content1 !== 'Autopool 2'
+              content1 !== 'Autopool 2' &&
+              content1 !== 'Autopool 3' &&
+              content1 !== 'Autopool 4' &&
+              content1 !== 'Autopool 5'
               ? `$${Utility.numberConversion(Number(content2 ?? 0))}`
               : content2
           return (
