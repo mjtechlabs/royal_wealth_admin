@@ -1,9 +1,9 @@
 /* eslint-disable react/no-array-index-key */
-import React, { useCallback, useRef, useState } from 'react'
+import React, {useCallback, useRef, useState} from 'react'
 
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import AutopoolDetailsApi from './api/AutopoolDetailsApi'
 
@@ -93,7 +93,6 @@ const AutopoolDetails = () => {
 
         {data && Object.keys(data).length > 0
           ? Object.entries(data).map(([groupName, poolGroup]) => (
-            (
               <div key={groupName} className=" pb-4">
                 <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-linear-to-r from-yellow-400 to-yellow-600 mb-6 uppercase tracking-widest pl-2 border-l-4 border-yellow-500">
                   {groupName.replace('autopool', 'Autopool ')}
@@ -131,10 +130,11 @@ const AutopoolDetails = () => {
                             </h4>
                           </div>
                           <span
-                            className={`shrink-0 text-[10px] lg:text-xs font-bold px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-full shadow-inner ${pool.status.toLowerCase() === 'completed'
-                              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                              : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
-                              }`}
+                            className={`shrink-0 text-[10px] lg:text-xs font-bold px-2.5 py-1 lg:px-3 lg:py-1.5 rounded-full shadow-inner ${
+                              pool.status.toLowerCase() === 'completed'
+                                ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                                : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                            }`}
                           >
                             {pool.status === 'Padding' ? 'Pending' : pool.status}
                           </span>
@@ -155,7 +155,7 @@ const AutopoolDetails = () => {
                                 <div
                                   key={i}
                                   className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-yellow-400/80 animate-pulse"
-                                  style={{ animationDelay: `${i * 150}ms` }}
+                                  style={{animationDelay: `${i * 150}ms`}}
                                 />
                               )
                             )}
@@ -165,11 +165,8 @@ const AutopoolDetails = () => {
                     ))}
                 </div>
               </div>
-            )
-          ))
+            ))
           : null}
-
-
       </div>
     </Layout2>
   )

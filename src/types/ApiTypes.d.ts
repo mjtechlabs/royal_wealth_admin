@@ -22,6 +22,10 @@ export interface UserInfoDashboard {
   autopool4: string
   autopool5: string
   cashback: string
+  poolincome: string
+  directincome: string
+  dailyincome: string
+  totalstacking: string
 }
 export interface UserIncomeWalletReportDetails {
   date: string
@@ -49,6 +53,11 @@ export interface TopUpApiData {
   roi_amount_daily: string
   roi_given: string
   ordewrby: string
+  dailyamount: string
+  roigiven: string
+  totalroi: string
+  totaldays: string
+  given_days: string
 }
 
 export interface UserUpdateApiProps {
@@ -211,7 +220,7 @@ export interface UserListApiData {
   user_reg_date: string
   user_is_active: string
   userstring: string
-
+  stack_amount: string
   countryid: string
 }
 export interface UserWalletDetailsProps {

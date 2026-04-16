@@ -66,11 +66,13 @@ const Sidebar = (props: {
                                 ? 'Without GateWay Withdraw'
                                 : currentPath.startsWith('/logout')
                                   ? 'logout'
-                                  : currentPath.startsWith('/popup')
-                                    ? 'PopUp-Dasboard'
-                                    : currentPath.startsWith('/support')
-                                      ? 'Support Ticket'
-                                      : 'dashboard'
+                                  : currentPath.startsWith('/stacking-list')
+                                    ? 'Stacking List'
+                                    : currentPath.startsWith('/popup')
+                                      ? 'PopUp-Dasboard'
+                                      : currentPath.startsWith('/support')
+                                        ? 'Support Ticket'
+                                        : 'dashboard'
             const isActive = currentPathName.toLowerCase().includes(content.toLowerCase())
 
             return content !== 'Logout' ? (

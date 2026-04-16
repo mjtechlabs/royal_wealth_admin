@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unstable-nested-components */
 import dayjs from 'dayjs'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
-import { CommonButton, TableComponent } from '@/components'
+import {CommonButton, TableComponent} from '@/components'
 import FilterComponent from '@/components/FilterComponent/FilterComponent'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { English } from '@/services'
-import { UserListApiData } from '@/types/ApiTypes'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {English} from '@/services'
+import {UserListApiData} from '@/types/ApiTypes'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import UserList from './api/UsersApi'
 
@@ -18,7 +18,7 @@ const Users = () => {
 
   const navigate = useNavigate()
   const dataWithIndex = useMemo(
-    () => totalUsers?.map((item, index) => ({ id: index + 1, ...item })),
+    () => totalUsers?.map((item, index) => ({id: index + 1, ...item})),
     [totalUsers]
   )
   const loaderRef = useRef<AppLoaderRef>(null)
@@ -94,9 +94,8 @@ const Users = () => {
       },
       {
         name: English.E82,
-        selector: (row: UserListApiData) => row.user_email,
-        sortable: true,
-        minWidth: 150
+        selector: (row: UserListApiData) => <span className="text-wrap">{row.user_email}</span>,
+        sortable: true
       },
       // {
       //   name: English.E163,
@@ -120,13 +119,14 @@ const Users = () => {
       },
       {
         name: English.E78,
-        selector: (row: UserListApiData) => <span>{row.user_reg_date}</span>,
-        sortable: true,
-        minWidth: 300
+        selector: (row: UserListApiData) => <span className="text-wrap">{row.user_reg_date}</span>,
+        sortable: true
       },
       {
         name: English.E219,
-        selector: (row: UserListApiData) => row.user_sponser_name,
+        selector: (row: UserListApiData) => (
+          <span className="text-wrap!">{row.user_sponser_name}</span>
+        ),
         sortable: true
       },
 
@@ -148,11 +148,21 @@ const Users = () => {
         )
       },
       {
+        name: English.E250,
+        cell: (value: UserListApiData) => (
+          <span className="text-wrap">
+            {value.stack_amount !== '' ? `$${value?.stack_amount}` : '--'}
+          </span>
+        ),
+        sortable: true
+      },
+      {
         name: English.E77,
         cell: (value: UserListApiData) => (
-          <span>{value.user_active_date !== '' ? value?.user_active_date : '--'}</span>
+          <span className="text-wrap">
+            {value.user_active_date !== '' ? value?.user_active_date : '--'}
+          </span>
         ),
-        minWidth: 300,
         sortable: true
       },
 
@@ -170,7 +180,7 @@ const Users = () => {
             </Link> */}
             <CommonButton
               className="text-nowrap!"
-              onClick={async () => navigate('/users/update', { state: value })}
+              onClick={async () => navigate('/users/update', {state: value})}
               singleLineContent={English.E93}
             />
             <CommonButton
@@ -204,7 +214,7 @@ const Users = () => {
         isStatus1Type
         isUserEmailType
         onPressSearch={(data) => {
-          const { date1, date2, date3, date4, email, userStatus } = data
+          const {date1, date2, date3, date4, email, userStatus} = data
           getUserList(date1, date2, date3, date4, email, userStatus)
         }}
       />

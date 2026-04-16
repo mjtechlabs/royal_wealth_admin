@@ -9,16 +9,16 @@ import {English} from '@/services'
 import {TopUpApiData} from '@/types/ApiTypes'
 import {AppLoaderRef} from '@/types/ComponentTypes'
 
-import TopupApi from './api/TopupApi'
+import StackingApi from './api/StackingApi'
 
-const Topup = () => {
-  const [topupData, setTopupData] = useState<TopUpApiData[] | null>([])
+const StackingList = () => {
+  const [stackingList, setStackingList] = useState<TopUpApiData[] | null>([])
   const loaderRef = useRef<AppLoaderRef>(null)
-  const dataWithIndex = topupData?.map((item, index) => ({
+  const dataWithIndex = stackingList?.map((item, index) => ({
     id: index + 1,
     ...item
   }))
-  const handleFetchToptupHistory = useCallback(
+  const handleFetchStackingHistory = useCallback(
     (regsdate: string, regedate: string, userCode: string) => {
       loaderRef?.current?.showLoader(true)
       const payload = {
@@ -27,10 +27,10 @@ const Topup = () => {
         usercode: userCode ?? ''
       }
 
-      TopupApi.TopupHistory(payload)
+      StackingApi.StackingHistory(payload)
         .then((res) => {
           if (res?.data) {
-            setTopupData(res?.data)
+            setStackingList(res?.data)
           }
         })
         .finally(() => {
@@ -60,7 +60,6 @@ const Topup = () => {
       selector: (row: TopUpApiData) => row.date,
       sortable: true
     },
-
     {
       name: English.E223,
       selector: (row: TopUpApiData) => <span>{row?.totalamount}</span>,
@@ -80,27 +79,16 @@ const Topup = () => {
       name: English.E246,
       selector: (row: TopUpApiData) => <span>${row?.totalroi}</span>,
       sortable: true
-    },
-
-    {
-      name: English.E248,
-      selector: (row: TopUpApiData) => <span>{row?.given_days}</span>,
-      sortable: true
-    },
-    {
-      name: English.E247,
-      selector: (row: TopUpApiData) => <span>{row?.totaldays}</span>,
-      sortable: true
     }
   ]
 
   useEffect(() => {
-    handleFetchToptupHistory('', '', '')
+    handleFetchStackingHistory('', '', '')
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
-    <Layout2 singleLineContent={English.E16}>
+    <Layout2 singleLineContent={English.E243}>
       <Loader ref={loaderRef} />
 
       <TableComponent columns={TopupTableHeading as unknown as any} data={dataWithIndex ?? []} />
@@ -108,4 +96,4 @@ const Topup = () => {
   )
 }
 
-export default Topup
+export default StackingList

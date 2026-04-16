@@ -93,9 +93,16 @@ const Constant = {
     },
 
     {
-      icon: Images.topUp,
+      icon: Images.deposit,
       link: '/topup-list',
       content: English.E16,
+      subMenu: []
+    },
+
+    {
+      icon: Images.topUp,
+      link: '/stacking-list',
+      content: English.E243,
       subMenu: []
     },
     {

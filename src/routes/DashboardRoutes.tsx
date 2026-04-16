@@ -16,6 +16,7 @@ import AutopoolDetails from '@/pages/AutopoolDetails/AutopoolDetails'
 import PopupImage from '@/pages/DashboardPopup/PopupImage'
 import CashbackBonus from '@/pages/Earning/CashbackBonus'
 import GeneologyTableView from '@/pages/Geneology/GenelogyTableView'
+import StackingList from '@/pages/Stacking/StackingList'
 import CloseTicketPage from '@/pages/SupportTicket/CloseTicket'
 import DetailsSupportTicket from '@/pages/SupportTicket/DetailsSupportTicket'
 import OpenTicketPage from '@/pages/SupportTicket/OpenTicket'
@@ -99,6 +100,17 @@ const DashboardRoutes = [
         <UserWrapper>
           <LazyLoader>
             <TopUp />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+    <Route
+      key="stacking-list"
+      path="/stacking-list"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <StackingList />
           </LazyLoader>
         </UserWrapper>
       }

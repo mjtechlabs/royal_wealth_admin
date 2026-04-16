@@ -28,8 +28,8 @@ const English = {
   E27: 'Level Team',
   E28: 'Salary Report',
   E29: 'Earning',
-  E30: 'Daily Trading Profit Bonus',
-  E31: 'Direct Referral Bonus',
+  E30: 'Daily Bonus',
+  E31: 'Referral Bonus',
   E32: 'Royalty Bonus',
   E33: 'Pool Bonus',
   E34: 'Rank Bonus',
@@ -237,6 +237,14 @@ const English = {
   E240: 'Autopool 3',
   E241: 'Autopool 4',
   E242: 'Autopool 5',
+  E243: 'Stacking List',
+  E244: 'Daily Amount',
+  E245: 'Roi Given',
+  E246: 'Total Roi',
+  E247: 'Total Days',
+  E248: 'Given Days',
+  E249: 'Total Stacking',
+  E250: 'Stack Amount'
 }
 
 export default English
