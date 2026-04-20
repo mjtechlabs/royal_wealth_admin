@@ -25,6 +25,7 @@ export interface UserInfoDashboard {
   poolincome: string
   directincome: string
   dailyincome: string
+  totaltodaybusiness: string
   totalstacking: string
 }
 export interface UserIncomeWalletReportDetails {

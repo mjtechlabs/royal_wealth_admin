@@ -244,7 +244,8 @@ const English = {
   E247: 'Total Days',
   E248: 'Given Days',
   E249: 'Total Stacking',
-  E250: 'Stack Amount'
+  E250: 'Stack Amount',
+  E251: 'Today Business'
 }
 
 export default English

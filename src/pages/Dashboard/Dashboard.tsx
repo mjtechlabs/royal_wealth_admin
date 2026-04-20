@@ -44,6 +44,11 @@ const Dashboard = () => {
         icon: Images.usercrossIcon
       },
       {
+        content1: English.E251,
+        content2: cardsDetails?.totaltodaybusiness ?? '0',
+        icon: Images.business
+      },
+      {
         content1: English.E73,
         content2: cardsDetails?.totalbusiness ?? '0',
         icon: Images.business
