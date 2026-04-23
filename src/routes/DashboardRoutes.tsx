@@ -15,6 +15,8 @@ import {
 import AutopoolDetails from '@/pages/AutopoolDetails/AutopoolDetails'
 import PopupImage from '@/pages/DashboardPopup/PopupImage'
 import CashbackBonus from '@/pages/Earning/CashbackBonus'
+import DailyTradingBonus from '@/pages/Earning/DailyTradingBonus'
+import PoolBonus from '@/pages/Earning/PoolBonus'
 import GeneologyTableView from '@/pages/Geneology/GenelogyTableView'
 import StackingList from '@/pages/Stacking/StackingList'
 import CloseTicketPage from '@/pages/SupportTicket/CloseTicket'
@@ -122,6 +124,28 @@ const DashboardRoutes = [
         <UserWrapper>
           <LazyLoader>
             <LevelBonus />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+     <Route
+      key="pool-bonus"
+      path="/pool-bonus"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <PoolBonus />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+    <Route
+      key="daily-trading-bonus"
+      path="/daily-trading-bonus"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <DailyTradingBonus />
           </LazyLoader>
         </UserWrapper>
       }

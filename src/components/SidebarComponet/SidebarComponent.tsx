@@ -1,8 +1,8 @@
-import {Link, NavLink, useLocation, useNavigate} from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 
-import {Constant, Images} from '@/services'
+import { Constant, Images } from '@/services'
 import CommonFunction from '@/services/CommonFunction'
-import {PersistStorage} from '@/store'
+import { PersistStorage } from '@/store'
 
 import ImageComponent from '../ImageComponent/ImageComponent'
 import LogoComponent from '../LogoComponent/LogoComponent'
@@ -12,7 +12,7 @@ const Sidebar = (props: {
   openMenu: string | null
   setOpenMenu: React.Dispatch<React.SetStateAction<string | null>>
 }) => {
-  const {onClickClose, openMenu, setOpenMenu} = props
+  const { onClickClose, openMenu, setOpenMenu } = props
   const navigate = useNavigate()
   const location = useLocation()
   return (
@@ -28,7 +28,7 @@ const Sidebar = (props: {
       <div className="flex h-[calc(100vh-100px)] flex-col justify-between gap-10 text-lg">
         <ul className="no-scrollbar h-[calc(100%-108px)] overflow-y-auto pr-1 space-y-2">
           {Constant.NavArray?.map((sidebaritems: any) => {
-            const {icon, link, content, subMenu} = sidebaritems
+            const { icon, link, content, subMenu } = sidebaritems
             const currentPath = location.pathname
             const currentPathName = currentPath.startsWith('/topup')
               ? 'Topup List'
@@ -37,37 +37,39 @@ const Sidebar = (props: {
                 : currentPath.startsWith('/autopool-details')
                   ? 'Autopool Details'
                   : currentPath.startsWith('/deposit') ||
-                      currentPath.startsWith('/deposit-accepted') ||
-                      currentPath.startsWith('/deposit-rejected')
+                    currentPath.startsWith('/deposit-accepted') ||
+                    currentPath.startsWith('/deposit-rejected')
                     ? 'Deposit Req List'
                     : currentPath.startsWith('/tree-view') ||
-                        currentPath.startsWith('/geneology-table')
+                      currentPath.startsWith('/geneology-table')
                       ? 'Genealogy'
                       : currentPath.startsWith('/daily-trading') ||
-                          currentPath.startsWith('/direct-referral') ||
-                          currentPath.startsWith('/royalty-bonus') ||
-                          currentPath.startsWith('/level-bonus') ||
-                          currentPath.startsWith('/rank-bonus') ||
-                          currentPath.startsWith('/cashback-bonus')
+                        currentPath.startsWith('/direct-referral') ||
+                        currentPath.startsWith('/royalty-bonus') ||
+                        currentPath.startsWith('/daily-trading-bonus') ||
+                        currentPath.startsWith('/level-bonus') ||
+                        currentPath.startsWith('/rank-bonus') ||
+                        currentPath.startsWith('/cashback-bonus') ||
+                        currentPath.startsWith('/pool-bonus')
                         ? 'Earning'
                         : currentPath.startsWith('/usdt-req') ||
-                            currentPath.startsWith('/usdt-report') ||
-                            currentPath.startsWith('/inr-report')
+                          currentPath.startsWith('/usdt-report') ||
+                          currentPath.startsWith('/inr-report')
                           ? 'Withdrawal'
                           : currentPath.startsWith('/wallet') ||
-                              currentPath.startsWith('/user-deposit-details') ||
-                              currentPath.startsWith('/user-wallet-details')
+                            currentPath.startsWith('/user-deposit-details') ||
+                            currentPath.startsWith('/user-wallet-details')
                             ? 'Wallet Report'
                             : currentPath.startsWith('/send-balance') ||
-                                currentPath.startsWith('/admin-trans-his') ||
-                                currentPath.startsWith('/user-balance')
+                              currentPath.startsWith('/admin-trans-his') ||
+                              currentPath.startsWith('/user-balance')
                               ? 'Wallet Manage'
                               : currentPath.startsWith('/without-gateway-req')
                                 ? 'Without GateWay Withdraw'
                                 : currentPath.startsWith('/logout')
                                   ? 'logout'
                                   : currentPath.startsWith('/stacking-list')
-                                    ? 'Stacking List'
+                                    ? 'Staking List'
                                     : currentPath.startsWith('/popup')
                                       ? 'PopUp-Dasboard'
                                       : currentPath.startsWith('/support')
@@ -80,11 +82,10 @@ const Sidebar = (props: {
                 <NavLink
                   to={link}
                   className={`flex items-center rounded-xl text-wrap! border px-3 py-2.5 transition-all duration-300 ease-in-out
-                  ${
-                    isActive
+                  ${isActive
                       ? 'border-transparent bg-primary-blue/15 text-primary-blue font-semibold'
                       : 'border-primary-cyan/30 text-primary-cyan hover:bg-primary-blue/5 hover:border-primary-blue/50 '
-                  }`}
+                    }`}
                   onClick={(e) => {
                     setOpenMenu((prev) => (prev === content ? null : content))
                     if (subMenu?.length === 0) {
@@ -148,10 +149,9 @@ const Sidebar = (props: {
                 key="logout"
                 to={link}
                 className={`flex items-center rounded-xl border px-3 py-2.5 transition-all gap-2.5 duration-300 ease-in-out
-                  ${
-                    isActive
-                      ? 'border-transparent bg-primary-blue/15 text-primary-blue font-semibold'
-                      : 'border-primary-cyan/30 text-primary-cyan hover:bg-primary-blue/5 hover:border-primary-blue/50 '
+                  ${isActive
+                    ? 'border-transparent bg-primary-blue/15 text-primary-blue font-semibold'
+                    : 'border-primary-cyan/30 text-primary-cyan hover:bg-primary-blue/5 hover:border-primary-blue/50 '
                   }`}
                 onClick={() => {
                   PersistStorage.purge()

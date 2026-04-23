@@ -1,11 +1,12 @@
-import {useCallback, useEffect, useRef, useState} from 'react'
+/* eslint-disable react/no-unstable-nested-components */
+import { useCallback, useEffect, useRef, useState } from 'react'
 
-import {TableComponent} from '@/components'
+import { TableComponent } from '@/components'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import {Layout2} from '@/layout'
-import {English} from '@/services'
-import {IncomeListApiData} from '@/types/ApiTypes'
-import {AppLoaderRef} from '@/types/ComponentTypes'
+import { Layout2 } from '@/layout'
+import { English } from '@/services'
+import { IncomeListApiData } from '@/types/ApiTypes'
+import { AppLoaderRef } from '@/types/ComponentTypes'
 
 import IncomeReportApi from './api/IncomeReportApi'
 
@@ -29,25 +30,26 @@ const CashbackBonus = () => {
     },
     {
       name: English.E98,
-      // eslint-disable-next-line react/no-unstable-nested-components
       cell: (value: any) => <span>$ {value?.amount}</span>,
       sortable: true
     },
     {
       name: English.E220,
-      selector: (row: any) => row.details,
-      sortable: true
+      selector: (row: any) => <span className="text-wrap">{row.details}</span>,
+      sortable: true,
+      minWidth: '150px'
     },
     {
       name: English.E97,
-      selector: (row: any) => row.date,
-      sortable: true
+      selector: (row: any) => <span className="text-wrap">{row.date}</span>,
+      sortable: true,
+      minWidth: '150px'
     }
   ]
   const handleFetchIncomeReportLists = useCallback(() => {
     loaderRef?.current?.showLoader(true)
     const payload = {
-      income_type: 'cashback'
+      income_type: 'direct'
     }
 
     IncomeReportApi.IncomeReportsLists(payload)
