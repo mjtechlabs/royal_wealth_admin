@@ -31,7 +31,7 @@ const Sidebar = (props: {
             const { icon, link, content, subMenu } = sidebaritems
             const currentPath = location.pathname
             const currentPathName = currentPath.startsWith('/topup')
-              ? 'Topup List'
+              ? 'Autopool Topup List'
               : currentPath.startsWith('/users')
                 ? 'users'
                 : currentPath.startsWith('/autopool-details')
@@ -69,7 +69,7 @@ const Sidebar = (props: {
                                 : currentPath.startsWith('/logout')
                                   ? 'logout'
                                   : currentPath.startsWith('/stacking-list')
-                                    ? 'Staking List'
+                                    ? 'Staking Topup List'
                                     : currentPath.startsWith('/popup')
                                       ? 'PopUp-Dasboard'
                                       : currentPath.startsWith('/support')
