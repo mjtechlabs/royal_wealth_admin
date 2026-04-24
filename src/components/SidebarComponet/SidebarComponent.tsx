@@ -43,38 +43,42 @@ const Sidebar = (props: {
                     : currentPath.startsWith('/tree-view') ||
                       currentPath.startsWith('/geneology-table')
                       ? 'Genealogy'
-                      : currentPath.startsWith('/daily-trading') ||
-                        currentPath.startsWith('/direct-referral') ||
-                        currentPath.startsWith('/royalty-bonus') ||
-                        currentPath.startsWith('/daily-trading-bonus') ||
-                        currentPath.startsWith('/level-bonus') ||
-                        currentPath.startsWith('/rank-bonus') ||
-                        currentPath.startsWith('/cashback-bonus') ||
-                        currentPath.startsWith('/pool-bonus')
-                        ? 'Earning'
-                        : currentPath.startsWith('/usdt-req') ||
-                          currentPath.startsWith('/usdt-report') ||
-                          currentPath.startsWith('/inr-report')
-                          ? 'Withdrawal'
-                          : currentPath.startsWith('/wallet') ||
-                            currentPath.startsWith('/user-deposit-details') ||
-                            currentPath.startsWith('/user-wallet-details')
-                            ? 'Wallet Report'
-                            : currentPath.startsWith('/send-balance') ||
-                              currentPath.startsWith('/admin-trans-his') ||
-                              currentPath.startsWith('/user-balance')
-                              ? 'Wallet Manage'
-                              : currentPath.startsWith('/without-gateway-req')
-                                ? 'Without GateWay Withdraw'
-                                : currentPath.startsWith('/logout')
-                                  ? 'logout'
-                                  : currentPath.startsWith('/stacking-list')
-                                    ? 'Staking Topup List'
-                                    : currentPath.startsWith('/popup')
-                                      ? 'PopUp-Dasboard'
-                                      : currentPath.startsWith('/support')
-                                        ? 'Support Ticket'
-                                        : 'dashboard'
+                      : currentPath.startsWith('/gift')
+                        ? 'Admin AutoPool TopUp'
+                        : currentPath.startsWith('/admin-stack')
+                        ? 'Admin Stacking TopUp'
+                        : currentPath.startsWith('/daily-trading') ||
+                          currentPath.startsWith('/direct-referral') ||
+                          currentPath.startsWith('/royalty-bonus') ||
+                          currentPath.startsWith('/daily-trading-bonus') ||
+                          currentPath.startsWith('/level-bonus') ||
+                          currentPath.startsWith('/rank-bonus') ||
+                          currentPath.startsWith('/cashback-bonus') ||
+                          currentPath.startsWith('/pool-bonus')
+                          ? 'Earning'
+                          : currentPath.startsWith('/usdt-req') ||
+                            currentPath.startsWith('/usdt-report') ||
+                            currentPath.startsWith('/inr-report')
+                            ? 'Withdrawal'
+                            : currentPath.startsWith('/wallet') ||
+                              currentPath.startsWith('/user-deposit-details') ||
+                              currentPath.startsWith('/user-wallet-details')
+                              ? 'Wallet Report'
+                              : currentPath.startsWith('/send-balance') ||
+                                currentPath.startsWith('/admin-trans-his') ||
+                                currentPath.startsWith('/user-balance')
+                                ? 'Wallet Manage'
+                                : currentPath.startsWith('/without-gateway-req')
+                                  ? 'Without GateWay Withdraw'
+                                  : currentPath.startsWith('/logout')
+                                    ? 'logout'
+                                    : currentPath.startsWith('/stacking-list')
+                                      ? 'Staking Topup List'
+                                      : currentPath.startsWith('/popup')
+                                        ? 'PopUp-Dasboard'
+                                        : currentPath.startsWith('/support')
+                                          ? 'Support Ticket'
+                                          : 'dashboard'
             const isActive = currentPathName.toLowerCase().includes(content.toLowerCase())
 
             return content !== 'Logout' ? (

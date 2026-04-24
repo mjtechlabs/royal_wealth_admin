@@ -272,7 +272,8 @@ export interface DepositDataProps {
   usercode: string
   wallet: string
 }
-export type TopupApiProps = Pick<TopUpApiData, 'usercode'>
+
+export type TopupApiProps = Pick<GiftListApiData, 'usercode' | 'amount'>
 
 export interface UserInfo extends Pick<TopUpApiData, 'usercode'> {
   name: string

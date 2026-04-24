@@ -1,6 +1,6 @@
-import {Route} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import {Layout} from '@/layout'
+import { Layout } from '@/layout'
 import LazyLoader from '@/LazyLoader'
 import {
   Dashboard,
@@ -31,7 +31,11 @@ import UserWalletReport from '@/pages/WalletReport/UserWalletReport'
 import UsdtWithdrawal from '@/pages/Withdrawal/UsdtWithdrawal'
 import UsdtWithdrawalReport from '@/pages/Withdrawal/UsdtWithdrawalReport'
 import WithoutGateway from '@/pages/WithoutGateWayWithdraw/WithoutGateway'
-import {UserWrapper} from '@/Wrapper'
+import { UserWrapper } from '@/Wrapper'
+import GiftIdTopup from '@/pages/GiftIdTopup/GiftIdTopup'
+import GitIdListReport from '@/pages/GiftIdTopup/GitIdListReport'
+import StackTopup from '@/pages/Stack Topup/StackTopup'
+import StackListReport from '@/pages/Stack Topup/StackListReport'
 
 const DashboardRoutes = [
   <Route
@@ -70,6 +74,50 @@ const DashboardRoutes = [
         <LazyLoader>
           <GeneologyTableView />
         </LazyLoader>
+      }
+    />
+    <Route
+      key="gift-topup"
+      path="/gift/topup"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <GiftIdTopup />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+    <Route
+      key="gift-id-list-report"
+      path="/gift/list-report"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <GitIdListReport />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+    <Route
+      key="stack-topup"
+      path="/admin-stack/topup"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <StackTopup />
+          </LazyLoader>
+        </UserWrapper>
+      }
+    />
+    <Route
+      key="stack-id-list-report"
+      path="/admin-stack/topup-list-report"
+      element={
+        <UserWrapper>
+          <LazyLoader>
+            <StackListReport />
+          </LazyLoader>
+        </UserWrapper>
       }
     />
     <Route
@@ -128,7 +176,7 @@ const DashboardRoutes = [
         </UserWrapper>
       }
     />
-     <Route
+    <Route
       key="pool-bonus"
       path="/pool-bonus"
       element={

@@ -42,7 +42,12 @@ const EndPoints = {
   statusTicket: 'support_ticket/status_change_close.php',
   closeTicket: 'support_ticket/close_ticket_list.php',
   addAdminRemark: 'support_ticket/add_admin_remark.php',
-  ticketDetails: 'support_ticket/details_ticket_list.php'
+  ticketDetails: 'support_ticket/details_ticket_list.php',
+
+  autopoolTopup: '/user_topup/autopool_topup.php',
+  stackTopup: 'user_topup/staking_topup.php',
+  giftTopupReport: '/user_topup/autopool_topup_list.php',
+  stackTopupReport: 'user_topup/staking_topup_list.php'
 }
 
 export default EndPoints

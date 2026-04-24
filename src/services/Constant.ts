@@ -18,6 +18,14 @@ const Constant = {
       type: 'password'
     }
   ],
+   topupData: [
+    {title: '$100', content: '100'},
+    {title: '$500', content: '500'},
+    {title: '$1000', content: '1000'},
+    {title: '$1500', content: '1500'},
+    {title: '$2000', content: '2000'},
+
+  ],
   LoginPasswrodArray: [
     {
       lableText: 'Password',
@@ -85,7 +93,36 @@ const Constant = {
       link: '/users',
       content: English.E41
     },
-
+    {
+      icon: Images.rewardIcon,
+      link: '#',
+      content: 'Admin AutoPool TopUp',
+      subMenu: [
+        {
+          subLink: '/gift/topup',
+          subContent: 'AutoPool TopUp'
+        },
+        {
+          subLink: '/gift/list-report',
+          subContent: 'AutoPool Report'
+        }
+      ]
+    },
+     {
+      icon: Images.rewardIcon,
+      link: '#',
+      content: 'Admin Stacking TopUp',
+      subMenu: [
+        {
+          subLink: '/admin-stack/topup',
+          subContent: 'Stacking TopUp'
+        },
+        {
+          subLink: '/admin-stack/topup-list-report',
+          subContent: 'Stacking Report'
+        }
+      ]
+    },
     {
       icon: Images.inviteIcon,
       link: '/popup/image',
@@ -230,7 +267,14 @@ const Constant = {
     { title: 'Active Users', content: '1' },
     { title: 'Block Users', content: '2' }
   ],
-  UserTopupInputs: [{ label: English.E45, inputName: 'usercode', type: 'text' }],
+  UserTopupInputs: [
+    { label: English.E54, inputName: 'amount', type: 'text' },
+    { label: English.E45, inputName: 'usercode', type: 'text' }
+  ],
+  AdminAutoPoolTopupInputs: [
+    // { label: English.E54, inputName: 'amount', type: 'text' },
+    { label: English.E45, inputName: 'usercode', type: 'text' }
+  ],
   buySellDropdown: ['On Going', 'History'],
 
   dashboardCardConstant: [
