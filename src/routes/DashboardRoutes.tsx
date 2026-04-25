@@ -1,6 +1,6 @@
-import { Route } from 'react-router-dom'
+import {Route} from 'react-router-dom'
 
-import { Layout } from '@/layout'
+import {Layout} from '@/layout'
 import LazyLoader from '@/LazyLoader'
 import {
   Dashboard,
@@ -18,6 +18,10 @@ import CashbackBonus from '@/pages/Earning/CashbackBonus'
 import DailyTradingBonus from '@/pages/Earning/DailyTradingBonus'
 import PoolBonus from '@/pages/Earning/PoolBonus'
 import GeneologyTableView from '@/pages/Geneology/GenelogyTableView'
+import GiftIdTopup from '@/pages/GiftIdTopup/GiftIdTopup'
+import GitIdListReport from '@/pages/GiftIdTopup/GitIdListReport'
+import StackListReport from '@/pages/Stack Topup/StackListReport'
+import StackTopup from '@/pages/Stack Topup/StackTopup'
 import StackingList from '@/pages/Stacking/StackingList'
 import CloseTicketPage from '@/pages/SupportTicket/CloseTicket'
 import DetailsSupportTicket from '@/pages/SupportTicket/DetailsSupportTicket'
@@ -31,11 +35,7 @@ import UserWalletReport from '@/pages/WalletReport/UserWalletReport'
 import UsdtWithdrawal from '@/pages/Withdrawal/UsdtWithdrawal'
 import UsdtWithdrawalReport from '@/pages/Withdrawal/UsdtWithdrawalReport'
 import WithoutGateway from '@/pages/WithoutGateWayWithdraw/WithoutGateway'
-import { UserWrapper } from '@/Wrapper'
-import GiftIdTopup from '@/pages/GiftIdTopup/GiftIdTopup'
-import GitIdListReport from '@/pages/GiftIdTopup/GitIdListReport'
-import StackTopup from '@/pages/Stack Topup/StackTopup'
-import StackListReport from '@/pages/Stack Topup/StackListReport'
+import {UserWrapper} from '@/Wrapper'
 
 const DashboardRoutes = [
   <Route

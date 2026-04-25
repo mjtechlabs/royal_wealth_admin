@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unstable-nested-components */
 import dayjs from 'dayjs'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 
-import { CommonButton, TableComponent } from '@/components'
+import {CommonButton, TableComponent} from '@/components'
 import FilterComponent from '@/components/FilterComponent/FilterComponent'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { English } from '@/services'
-import { UserListApiData } from '@/types/ApiTypes'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {English} from '@/services'
+import {UserListApiData} from '@/types/ApiTypes'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import UserList from './api/UsersApi'
 
@@ -18,7 +18,7 @@ const Users = () => {
 
   const navigate = useNavigate()
   const dataWithIndex = useMemo(
-    () => totalUsers?.map((item, index) => ({ id: index + 1, ...item })),
+    () => totalUsers?.map((item, index) => ({id: index + 1, ...item})),
     [totalUsers]
   )
   const loaderRef = useRef<AppLoaderRef>(null)
@@ -43,7 +43,6 @@ const Users = () => {
       }
       UserList.getUserList(payload)
         .then((res) => {
-          console.log(res)
           setTotalUsers(res)
         })
         .finally(() => {
@@ -170,9 +169,7 @@ const Users = () => {
         name: 'Autopool 1',
         cell: (value: UserListApiData) => (
           <span>
-            {Number(value.user_autpool_1) === 0
-              ? 'InActive Autopool' : 'Active Autopool'
-            }
+            {Number(value.user_autpool_1) === 0 ? 'InActive Autopool' : 'Active Autopool'}
           </span>
         )
       },
@@ -180,9 +177,7 @@ const Users = () => {
         name: 'Autopool 2',
         cell: (value: UserListApiData) => (
           <span>
-            {Number(value.user_autpool_2) === 0
-              ? 'InActive Autopool' : 'Active Autopool'
-            }
+            {Number(value.user_autpool_2) === 0 ? 'InActive Autopool' : 'Active Autopool'}
           </span>
         )
       },
@@ -190,9 +185,7 @@ const Users = () => {
         name: 'Autopool 3',
         cell: (value: UserListApiData) => (
           <span>
-            {Number(value.user_autpool_3) === 0
-              ? 'InActive Autopool' : 'Active Autopool'
-            }
+            {Number(value.user_autpool_3) === 0 ? 'InActive Autopool' : 'Active Autopool'}
           </span>
         )
       },
@@ -200,9 +193,7 @@ const Users = () => {
         name: 'Autopool 4',
         cell: (value: UserListApiData) => (
           <span>
-            {Number(value.user_autpool_4) === 0
-              ? 'InActive Autopool' : 'Active Autopool'
-            }
+            {Number(value.user_autpool_4) === 0 ? 'InActive Autopool' : 'Active Autopool'}
           </span>
         )
       },
@@ -210,9 +201,7 @@ const Users = () => {
         name: 'Autopool 5',
         cell: (value: UserListApiData) => (
           <span>
-            {Number(value.user_autpool_5) === 0
-              ? 'InActive Autopool' : 'Active Autopool'
-            }
+            {Number(value.user_autpool_5) === 0 ? 'InActive Autopool' : 'Active Autopool'}
           </span>
         )
       },
@@ -231,7 +220,7 @@ const Users = () => {
             </Link> */}
             <CommonButton
               className="text-nowrap!"
-              onClick={async () => navigate('/users/update', { state: value })}
+              onClick={async () => navigate('/users/update', {state: value})}
               singleLineContent={English.E93}
             />
             <CommonButton
@@ -265,7 +254,7 @@ const Users = () => {
         isStatus1Type
         isUserEmailType
         onPressSearch={(data) => {
-          const { date1, date2, date3, date4, email, userStatus } = data
+          const {date1, date2, date3, date4, email, userStatus} = data
           getUserList(date1, date2, date3, date4, email, userStatus)
         }}
       />

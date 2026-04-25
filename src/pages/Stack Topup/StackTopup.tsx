@@ -1,11 +1,11 @@
-import { useCallback, useRef, useState } from 'react'
+import {useCallback, useRef, useState} from 'react'
 
-import { CommonButton } from '@/components'
+import {CommonButton} from '@/components'
 import InputComponent from '@/components/InputComponent/InputComponent'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { Constant, English, Utility } from '@/services'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {Constant, English, Utility} from '@/services'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import SendBalanceApi from '../WalletManage/api/SendBalanceApi'
 import StackTopupApi from './api/StackTopupApi'
@@ -35,14 +35,14 @@ const StackTopup = () => {
   const handleInputChange = useCallback(
     (name: string, value: string) => {
       setInputValues((prev) => {
-        let newValues = { ...prev, [name]: value }
+        let newValues = {...prev, [name]: value}
 
         if (name === 'usercode' && value.length >= 6) {
-          newValues = { ...newValues, [name]: value }
+          newValues = {...newValues, [name]: value}
           handleGetUserName(value)
         }
         if (name === 'amount') {
-          newValues = { ...newValues, [name]: Utility.isValidNumber(value) }
+          newValues = {...newValues, [name]: Utility.isValidNumber(value)}
         }
 
         return newValues
@@ -78,7 +78,7 @@ const StackTopup = () => {
       <div className="padded__container__utility space-y-8">
         <div className="flex flex-col  gap-4">
           {Constant.UserTopupInputs.map((items) => {
-            const { label, type, inputName } = items
+            const {label, type, inputName} = items
             return (
               <div key={`inputs_${label}`}>
                 <InputComponent
@@ -87,7 +87,7 @@ const StackTopup = () => {
                   type={type}
                   value={inputValues?.[inputName as keyof typeof inputValues]}
                   onChange={(e) => {
-                    const { name, value } = e.target
+                    const {name, value} = e.target
                     handleInputChange(name, value)
                   }}
                   onKeyDown={(e) => {

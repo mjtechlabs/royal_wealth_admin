@@ -1,4 +1,4 @@
-import { LoginApiData } from './apiTypes/AuthApiPayloadType'
+import {LoginApiData} from './apiTypes/AuthApiPayloadType'
 
 export interface UserInfoDashboard {
   totaluser: string
@@ -81,7 +81,7 @@ export interface CityData {
 }
 export interface GiftListApiData
   extends Pick<TopUpApiData, 'amount' | 'usercode' | 'date'>,
-  Pick<WithDrawApiData, 'walletaddress'> { }
+    Pick<WithDrawApiData, 'walletaddress'> {}
 
 export interface IncomeListApiData extends Pick<GiftListApiData, 'amount' | 'date' | 'usercode'> {
   details: string
@@ -342,7 +342,7 @@ export interface CreateTicketApiProps extends Pick<LoginApiData, 'token'> {
 
 export interface SupportListApiProps
   extends Pick<LoginApiData, 'token'>,
-  Pick<CreateTicketApiProps, 'select_support_ticket'> {
+    Pick<CreateTicketApiProps, 'select_support_ticket'> {
   fromdate: string
   todate: string
   status: string

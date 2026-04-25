@@ -1,23 +1,23 @@
-import { useCallback, useRef, useState } from 'react'
+import {useCallback, useRef, useState} from 'react'
 
-import { CommonButton, Dropdown } from '@/components'
+import {CommonButton, Dropdown} from '@/components'
 import InputComponent from '@/components/InputComponent/InputComponent'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { Constant, English, Utility } from '@/services'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {Constant, English} from '@/services'
+import {DropDownObjectType} from '@/types/CommonTypes'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import SendBalanceApi from '../WalletManage/api/SendBalanceApi'
 import GiftIdTopupApi from './api/GiftIdTopupApi'
-import { DropDownObjectType } from '@/types/CommonTypes'
 
 const GiftIdTopup = () => {
   const [inputValues, setInputValues] = useState({
-    usercode: '',
+    usercode: ''
   })
   const loaderRef = useRef<AppLoaderRef>(null)
   const [userName, setUserName] = useState('')
-const [selectedDropDown, setSelectedDropDown] = useState<DropDownObjectType>({
+  const [selectedDropDown, setSelectedDropDown] = useState<DropDownObjectType>({
     title: '$100',
     content: '100'
   })
@@ -38,13 +38,12 @@ const [selectedDropDown, setSelectedDropDown] = useState<DropDownObjectType>({
   const handleInputChange = useCallback(
     (name: string, value: string) => {
       setInputValues((prev) => {
-        let newValues = { ...prev, [name]: value }
+        let newValues = {...prev, [name]: value}
 
         if (name === 'usercode' && value.length >= 6) {
-          newValues = { ...newValues, [name]: value }
+          newValues = {...newValues, [name]: value}
           handleGetUserName(value)
         }
-       
 
         return newValues
       })
@@ -82,7 +81,7 @@ const [selectedDropDown, setSelectedDropDown] = useState<DropDownObjectType>({
       <div className="padded__container__utility space-y-8">
         <div className="flex flex-col  gap-4">
           {Constant.AdminAutoPoolTopupInputs.map((items) => {
-            const { label, type, inputName } = items
+            const {label, type, inputName} = items
             return (
               <div key={`inputs_${label}`}>
                 <InputComponent
@@ -91,7 +90,7 @@ const [selectedDropDown, setSelectedDropDown] = useState<DropDownObjectType>({
                   type={type}
                   value={inputValues?.[inputName as keyof typeof inputValues]}
                   onChange={(e) => {
-                    const { name, value } = e.target
+                    const {name, value} = e.target
                     handleInputChange(name, value)
                   }}
                   onKeyDown={(e) => {
@@ -110,14 +109,14 @@ const [selectedDropDown, setSelectedDropDown] = useState<DropDownObjectType>({
               </div>
             )
           })}
-            <div className="grid ">
-              <Dropdown
-                dropDownData={Constant.topupData}
-                onSelectValue={setSelectedDropDown}
-                selectedValue={selectedDropDown}
-                wrapperClassName="max-h-56!"
-              />
-            </div>
+          <div className="grid ">
+            <Dropdown
+              dropDownData={Constant.topupData}
+              onSelectValue={setSelectedDropDown}
+              selectedValue={selectedDropDown}
+              wrapperClassName="max-h-56!"
+            />
+          </div>
           <CommonButton
             className={`small__transparent__button w-fit! `}
             disabled={Object.values(inputValues).some((item) => item === '')}

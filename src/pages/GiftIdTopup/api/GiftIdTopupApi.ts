@@ -1,8 +1,8 @@
-import { toast } from 'react-toastify'
+import {toast} from 'react-toastify'
 
 import ApiCall from '@/services/ApiCall'
 import EndPoints from '@/services/EndPoints'
-import { GiftListApiData, TopupApiProps } from '@/types/ApiTypes'
+import {GiftListApiData, TopupApiProps} from '@/types/ApiTypes'
 
 const GiftTopup = async (props: TopupApiProps) => {
   const payload = {
@@ -28,7 +28,7 @@ const GiftTopup = async (props: TopupApiProps) => {
 }
 
 const GiftListReport = async () =>
-  new Promise<{ data: GiftListApiData[] } | null>((resolve) => {
+  new Promise<{data: GiftListApiData[]} | null>((resolve) => {
     ApiCall('post', EndPoints.giftTopupReport)
       .then((res: any) => {
         if (res?.status === 200) {
@@ -46,5 +46,5 @@ const GiftListReport = async () =>
       })
   })
 
-const GiftIdTopupApi = { GiftTopup, GiftListReport }
+const GiftIdTopupApi = {GiftTopup, GiftListReport}
 export default GiftIdTopupApi

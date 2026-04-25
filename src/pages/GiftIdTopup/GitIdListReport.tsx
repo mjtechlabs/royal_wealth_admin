@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unstable-nested-components */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 
-import { HeadingComponent, TableComponent } from '@/components'
+import {HeadingComponent, TableComponent} from '@/components'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { English } from '@/services'
-import { GiftListApiData } from '@/types/ApiTypes'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {English} from '@/services'
+import {GiftListApiData} from '@/types/ApiTypes'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import GiftIdTopupApi from './api/GiftIdTopupApi'
 
@@ -15,7 +15,7 @@ const GitIdListReport = () => {
   const [giftListData, setGiftListData] = useState<GiftListApiData[] | null>([])
   const loaderRef = useRef<AppLoaderRef>(null)
   const dataWithIndex = useMemo(
-    () => giftListData?.map((item, index) => ({ id: index + 1, ...item })),
+    () => giftListData?.map((item, index) => ({id: index + 1, ...item})),
     [giftListData]
   )
 
@@ -48,7 +48,7 @@ const GitIdListReport = () => {
       cell: (row: any) => <span>${row.amount}</span>,
       sortable: true
     },
- {
+    {
       name: 'AutoPool',
       selector: (row: any) => row.pack,
       sortable: true
@@ -67,8 +67,10 @@ const GitIdListReport = () => {
   return (
     <Layout2>
       <HeadingComponent
-        isUnderline className="text-left mt-5"
-        singleLineContent="AutoPool Topup List" />
+        isUnderline
+        className="text-left mt-5"
+        singleLineContent="AutoPool Topup List"
+      />
       <Loader ref={loaderRef} />
 
       <TableComponent columns={GiftListHeading} data={dataWithIndex ?? []} />

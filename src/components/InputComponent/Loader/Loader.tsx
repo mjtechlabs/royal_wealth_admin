@@ -1,7 +1,5 @@
 import {forwardRef, useImperativeHandle} from 'react'
 
-import ImageComponent from '@/components/ImageComponent/ImageComponent'
-import {Images} from '@/services'
 import {GeneralProps} from '@/types/CommonTypes'
 import {AppLoaderRef} from '@/types/ComponentTypes'
 
@@ -35,7 +33,7 @@ const Loader = forwardRef<AppLoaderRef, Pick<GeneralProps, 'className'>>((props,
     >
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" role="status">
         <div className="loader flex items-center justify-center">
-          <ImageComponent className="w-30 h-30" imageUrl={Images.logoImg} />
+          {/* <ImageComponent className="w-30 h-30" imageUrl={Images.logoImg} /> */}
         </div>
       </div>
     </div>

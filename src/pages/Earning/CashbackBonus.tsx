@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unstable-nested-components */
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {useCallback, useEffect, useRef, useState} from 'react'
 
-import { TableComponent } from '@/components'
+import {TableComponent} from '@/components'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { English } from '@/services'
-import { IncomeListApiData } from '@/types/ApiTypes'
-import { AppLoaderRef } from '@/types/ComponentTypes'
+import {Layout2} from '@/layout'
+import {English} from '@/services'
+import {IncomeListApiData} from '@/types/ApiTypes'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import IncomeReportApi from './api/IncomeReportApi'
 

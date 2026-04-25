@@ -1,11 +1,13 @@
 /* eslint-disable react/jsx-sort-props */
-import {useCallback, useState} from 'react'
+import {useCallback, useRef, useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
 import {CommonButton, HeadingComponent, ImageComponent} from '@/components'
 import InputComponent from '@/components/InputComponent/InputComponent'
+import Loader from '@/components/InputComponent/Loader/Loader'
 import {Constant, English, Images, Utility} from '@/services'
 import CommonFunction from '@/services/CommonFunction'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
 import AuthApi from './api/AuthApi'
 
@@ -13,19 +15,26 @@ const Login = () => {
   const [inputValues, setInputValues] = useState({email: '', password: ''})
   const [error, setError] = useState({email: '', password: ''})
   const navigate = useNavigate()
+  const loaderRef = useRef<AppLoaderRef>(null)
   const [showPassword, setShowPassword] = useState(true)
+
   const handleLoginAdmin = useCallback(() => {
+    loaderRef.current?.showLoader(true)
     const payload = {
       email: inputValues?.email,
       password: inputValues?.password
     }
 
-    AuthApi.LoginAdminApi(payload).then((res) => {
-      if (res) {
-        CommonFunction.addSliceData('addUserDetails', {token: res?.token})
-        navigate('/')
-      }
-    })
+    AuthApi.LoginAdminApi(payload)
+      .then((res) => {
+        if (res) {
+          CommonFunction.addSliceData('addUserDetails', {token: res?.token})
+          navigate('/')
+        }
+      })
+      .finally(() => {
+        loaderRef.current?.showLoader(false)
+      })
   }, [inputValues?.email, inputValues?.password, navigate])
 
   const handleInputChange = useCallback((name: string, value: string) => {
@@ -39,6 +48,7 @@ const Login = () => {
 
   return (
     <div className="  h-screen w-screen">
+      <Loader ref={loaderRef} />
       <div className="h-full bg-[url(./src/assets/back.png)] bg-cover flex items-center justify-center ">
         <div className="flex-col max-w-[320px] m-5 p-6 w-full mx-auto items-center justify-center bg-primary-white space-y-5 shadow-lg rounded-2xl">
           <div className="flex flex-col justify-center items-center  rounded-xl">

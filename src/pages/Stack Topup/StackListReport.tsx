@@ -1,21 +1,21 @@
 /* eslint-disable react/no-unstable-nested-components */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 
-import { HeadingComponent, TableComponent } from '@/components'
+import {HeadingComponent, TableComponent} from '@/components'
 import Loader from '@/components/InputComponent/Loader/Loader'
-import { Layout2 } from '@/layout'
-import { English } from '@/services'
-import { GiftListApiData } from '@/types/ApiTypes'
-import { AppLoaderRef } from '@/types/ComponentTypes'
-import StackTopupApi from './api/StackTopupApi'
+import {Layout2} from '@/layout'
+import {English} from '@/services'
+import {GiftListApiData} from '@/types/ApiTypes'
+import {AppLoaderRef} from '@/types/ComponentTypes'
 
+import StackTopupApi from './api/StackTopupApi'
 
 const StackListReport = () => {
   const [giftListData, setGiftListData] = useState<GiftListApiData[] | null>([])
   const loaderRef = useRef<AppLoaderRef>(null)
   const dataWithIndex = useMemo(
-    () => giftListData?.map((item, index) => ({ id: index + 1, ...item })),
+    () => giftListData?.map((item, index) => ({id: index + 1, ...item})),
     [giftListData]
   )
 
@@ -48,7 +48,7 @@ const StackListReport = () => {
       cell: (row: any) => <span>${row.amount}</span>,
       sortable: true
     },
-  
+
     {
       name: English.E97,
       selector: (row: any) => row.date,
@@ -63,8 +63,10 @@ const StackListReport = () => {
   return (
     <Layout2>
       <HeadingComponent
-        isUnderline className="text-left mt-5"
-        singleLineContent="Stack Topup List" />
+        isUnderline
+        className="text-left mt-5"
+        singleLineContent="Stack Topup List"
+      />
       <Loader ref={loaderRef} />
 
       <TableComponent columns={GiftListHeading} data={dataWithIndex ?? []} />
